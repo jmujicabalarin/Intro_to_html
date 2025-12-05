@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+</head>
+<body>
+
+    <img id="crash" src="Images/crash.png">
+    <img id="kick" src="Images/kick.png">
+    <img id="snare" src="Images/snare.png">
+    <img id="tom1" src="Images/tom1.png">
+    <img id="tom2" src="Images/tom2.png">
+    <img id="tom3" src="Images/tom3.png">
+    <img id="tom4" src="Images/tom4.png">
+
+    <audio id="crashSound" src="Sounds/crash.mp3"></audio>
+    <audio id="kickSound" src="Sounds/kick-bass.mp3"></audio>
+    <audio id="snareSound" src="Sounds/snare.mp3"></audio>
+    <audio id="tom1Sound" src="Sounds/tom-1.mp3"></audio>
+    <audio id="tom2Sound" src="Sounds/tom-2.mp3"></audio>
+    <audio id="tom3Sound" src="Sounds/tom-3.mp3"></audio>
+    <audio id="tom4Sound" src="Sounds/tom-4.mp3"></audio>
+
+
+     <script>
+        
+        function addDrumTrigger(imageId, soundId) {
+            const img = document.getElementById(imageId);
+            const sound = document.getElementById(soundId);
+
+            img.addEventListener("click", () => {
+                sound.currentTime = 0; 
+                sound.play();
+            });
+        }
+
+    
+        addDrumTrigger("crash", "crashSound");
+        addDrumTrigger("kick", "kickSound");
+        addDrumTrigger("snare", "snareSound");
+        addDrumTrigger("tom1", "tom1Sound");
+        addDrumTrigger("tom2", "tom2Sound");
+        addDrumTrigger("tom3", "tom3Sound");
+        addDrumTrigger("tom4", "tom4Sound");
+    </script>
+
+</body>
+</html>
